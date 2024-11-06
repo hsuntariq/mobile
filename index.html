@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile</title>
+    <style>
+      .mobile {
+        width: 300px;
+        height: 500px;
+        border: 2px solid black;
+        margin: auto;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .camera {
+        width: 50%;
+        background-color: black;
+        height: 10%;
+        margin: auto;
+        border-radius: 0 0 10px 10px;
+        position: relative;
+      }
+
+      .flash {
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+      }
+
+      .lens {
+        width: 70%;
+        height: 20px;
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .flash2 {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .lens2 {
+        width: 70%;
+        height: 10px;
+        background-color: black;
+        border-radius: 10px;
+        position: absolute;
+        left: 20%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .flash3 {
+        width: 5px;
+        height: 5px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10%;
+      }
+
+      .lens3 {
+        width: 70%;
+        height: 5px;
+        border-radius: 3px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+      }
+
+      .video-container {
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+      }
+
+      .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+
+      .suggestion-container {
+        width: 90%;
+        height: 20%;
+        background-color: red;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+      }
+      .suggestion-container2 {
+        width: 90%;
+        height: 20%;
+        background-color: red;
+        position: absolute;
+        top: 72%;
+        left: 5%;
+      }
+
+      .s-left {
+        width: 30%;
+        height: 90%;
+        background-color: blue;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+      }
+      .s-right {
+        width: 60%;
+        height: 90%;
+        background-color: yellow;
+        position: absolute;
+        top: 5%;
+        left: 38%;
+      }
+
+      .sr-top {
+        height: 10%;
+        width: 90%;
+        background-color: blueviolet;
+        left: 5%;
+        top: 5%;
+        position: absolute;
+      }
+      .sr-bottom {
+        height: 75%;
+        width: 90%;
+        background-color: blue;
+        left: 5%;
+        top: 17%;
+        position: absolute;
+      }
+
+      .buttons {
+        position: absolute;
+        width: 90%;
+        left: 5%;
+        height: 6%;
+        bottom: 2px;
+      }
+
+      .left,
+      .mid,
+      .right {
+        width: 30%;
+        height: 90%;
+        top: 5%;
+        background-color: black;
+        position: absolute;
+      }
+
+      .right {
+        right: 5px;
+        clip-path: polygon(
+          0% 20%,
+          60% 20%,
+          60% 0%,
+          100% 50%,
+          60% 100%,
+          60% 80%,
+          0% 80%
+        );
+      }
+      .left {
+        left: 5px;
+        clip-path: polygon(
+          40% 0%,
+          40% 20%,
+          100% 20%,
+          100% 80%,
+          40% 80%,
+          40% 100%,
+          0% 50%
+        );
+      }
+      .mid {
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: circle();
+      }
+
+      .speakers {
+        height: 20px;
+        width: 40px;
+
+        position: absolute;
+        bottom: -20px;
+        left: 40px;
+      }
+      .speakers2 {
+        height: 20px;
+        width: 40px;
+
+        position: absolute;
+        bottom: -20px;
+        right: 40px;
+      }
+
+      .speaker1,
+      .speaker2,
+      .speaker3 {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      .speaker1 {
+        left: 2px;
+      }
+      .speaker3 {
+        right: 2px;
+      }
+      .speaker1 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .charging-port {
+        width: 30px;
+        height: 10px;
+        background-color: black;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .power {
+        background-color: black;
+        height: 40px;
+        top: 40%;
+        width: 10px;
+        position: absolute;
+        right: -10px;
+      }
+      .volume {
+        background-color: black;
+        height: 150px;
+        top: 5%;
+        width: 10px;
+        position: absolute;
+        right: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile">
+      <div class="power"></div>
+      <div class="volume"></div>
+      <div class="camera">
+        <div class="flash"></div>
+        <div class="lens">
+          <div class="flash2"></div>
+          <div class="lens2">
+            <div class="flash3"></div>
+            <div class="lens3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <video
+          src="https://videos.pexels.com/video-files/4620490/4620490-uhd_2732_1440_25fps.mp4"
+          width="100%"
+          height="100%"
+          autoplay
+          muted
+          loop
+        ></video>
+      </div>
+
+      <div class="suggestion-container">
+        <div class="s-left"></div>
+        <div class="s-right">
+          <div class="sr-top"></div>
+          <div class="sr-bottom"></div>
+        </div>
+      </div>
+      <div class="suggestion-container2">
+        <div class="s-left"></div>
+        <div class="s-right">
+          <div class="sr-top"></div>
+          <div class="sr-bottom"></div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <div class="left"></div>
+        <div class="mid"></div>
+        <div class="right"></div>
+      </div>
+
+      <div class="speakers">
+        <div class="speaker1"></div>
+        <div class="speaker2"></div>
+        <div class="speaker3"></div>
+      </div>
+      <div class="speakers2">
+        <div class="speaker1"></div>
+        <div class="speaker2"></div>
+        <div class="speaker3"></div>
+      </div>
+
+      <div class="charging-port"></div>
+    </div>
+  </body>
+</html>
